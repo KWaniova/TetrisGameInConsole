@@ -130,7 +130,7 @@
 		},
 		{
 			"backtrace" : 1,
-			"path" : "Tetris.h",
+			"path" : "include/Tetris.h",
 			"sourceGroupIndex" : 1
 		},
 		{

@@ -31,6 +31,6 @@ void Point::set_y(int _y) {
 }
 
 void Point::print() {
-    std::cout << "x: " << x << " y: " << y << std::endl;
+    std::cout << "Point(x: " << x << " y: " << y << ")" << std::endl;
 }
 

@@ -3,6 +3,8 @@
 
 using namespace std;
 
+char EMPTY_CHAR = ' ';
+
 Canvas::Canvas(int _height, int _width) {
     canvas = new char *[_height];
     for (int row = 0; row < _height; row++)
@@ -10,11 +12,15 @@ Canvas::Canvas(int _height, int _width) {
 
     for (int row = 0; row < _height; row++)
         for (int col = 0; col < _width; col++)
-            canvas[row][col] = ' ';
+            canvas[row][col] = EMPTY_CHAR;
 
     height = _height;
     width = _width;
 };
+
+bool Canvas::is_point_empty(Point point) {
+    return canvas[point.get_x()][point.get_y()] == EMPTY_CHAR;
+}
 
 char** Canvas::get_canvas() { //to get canvas that cant be modified
     char ** canvasCopy = new char *[height];
@@ -35,7 +41,6 @@ void Canvas::print_canvas_edge()
 };
 
 Canvas::~Canvas() {
-    std::cout << "Canvas destroyed" << std::endl;
 }
 
 void Canvas::draw()
@@ -49,6 +54,14 @@ void Canvas::draw()
     };
     print_canvas_edge();
 };
+
+void Canvas::draw_points(std::vector<Point> points, char color) {
+    for(int i = 0; i < points.size(); i++){
+        if(is_point_empty(points[i])){
+            canvas[points[i].get_x()][points[i].get_y()] = color;
+        }
+    }
+}
 
 int Canvas::get_height() {
     return height;

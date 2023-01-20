@@ -10,15 +10,8 @@
 class Figure_O: public Figure {
 public:
 
-    Figure_O();
+    Figure_O(Canvas canvas);
     ~Figure_O();
-
-    void draw(Canvas);
-    void rotate();
-
-    void move_left(Canvas canvas);
-    void move_right(Canvas canvas);
-    void move_down(Canvas canvas);
 
 };
 

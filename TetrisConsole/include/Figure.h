@@ -6,24 +6,38 @@
 #define TETRIMINO_H
 
 
+#include <vector>
 #include "../FigureCoordinates.h"
 #include "Canvas.h"
 
+enum DIRECTION {LEFT_DOWN, RIGHT_DOWN, DOWN};
+
+//TODO: here can be RFC
 class Figure {
     int ID;
-    static int figure_count;
+    std::vector<Point> block_coordinates;
+    Canvas canvas;
+    char color;
+
+    void move_left();
+    void move_right();
+    void move_down();
 
 public:
-    char color;
-    FigureCoordinates coordinates;
-    Figure();
-    Figure(FigureCoordinates _coordinates);
+    static int figure_count;
+    Figure(Canvas _canvas, char _color, std::vector<Point> _coordinates);
     ~Figure();
-    virtual void draw(Canvas canvas);
-    virtual void move_left(Canvas canvas);
-    virtual void move_right(Canvas canvas);
-    virtual void move_down(Canvas canvas);
+    void draw(Canvas canvas);
+    void fall(DIRECTION direction);
     void print_coordinates();
+    std::vector<Point> get_coordinates();
+    Canvas get_canvas();
+    char get_color();
+    void draw_on_canvas();
+    bool check_move_possible(DIRECTION direction);
+    bool check_fall_possible();
+    void set_block_coordinates(std::vector<Point> _coordinates);
+
 };
 
 
