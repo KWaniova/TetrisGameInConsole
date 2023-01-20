@@ -1,0 +1,21 @@
+# ninja log v5
+8	5800	1674236547812013314	CMakeFiles/untitled.dir/Figure_O.cpp.o	63c2ba9663f96a2e
+11	909	1673345539889776717	CMakeFiles/untitled.dir/Game.cpp.o	aaccf3dbb84cd641
+10	5781	1674236547784520240	CMakeFiles/untitled.dir/Canvas.cpp.o	c4295edd3c3663c7
+4	1680	1673351980726121903	CMakeFiles/untitled.dir/Figure_I.cpp.o	292126fd2b2cffce
+2	1796	1673361005509205758	CMakeFiles/untitled.dir/main.cpp.o	8d53ea31b08b9446
+1	437	1674236893851575045	build.ninja	b7cac9fb83a60014
+11335	13039	1674236555062129271	untitled	d996119f126716f2
+5781	11335	1674236553348739881	CMakeFiles/untitled.dir/Tetris.cpp.o	af360b3553299f1d
+12	5823	1674236547735446242	CMakeFiles/untitled.dir/Figure.cpp.o	3c6a7e5fb2052fb1
+6	1010	1673349878397364143	CMakeFiles/untitled.dir/Tetrimino.cpp.o	4beba19ca73b752c
+7	876	1673347360391165005	CMakeFiles/untitled.dir/Timer.cpp.o	5688d3bf9644044e
+1299	2194	1673358979505926665	CMakeFiles/untitled.dir/Point.cpp.o	ff4ba7631cc52257
+1301	2195	1673358979507335779	CMakeFiles/untitled.dir/FigureCoordinates.cpp.o	ca06c56a5969d832
+1	258	1674236893851575045	build.ninja	b7cac9fb83a60014
+27	2046	1674236895900874515	CMakeFiles/untitled.dir/Point.cpp.o	ff4ba7631cc52257
+28	2048	1674236895904314822	CMakeFiles/untitled.dir/FigureCoordinates.cpp.o	ca06c56a5969d832
+29	2059	1674236895919431601	CMakeFiles/untitled.dir/Figure_O.cpp.o	63c2ba9663f96a2e
+2048	2881	1674236896745335879	CMakeFiles/untitled.dir/Tetris.cpp.o	af360b3553299f1d
+2046	2882	1674236896748722027	CMakeFiles/untitled.dir/Figure.cpp.o	3c6a7e5fb2052fb1
+2882	2985	1674236896856921410	untitled	d996119f126716f2
