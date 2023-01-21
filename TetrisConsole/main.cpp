@@ -5,7 +5,8 @@ using namespace std;
 
 int main()
 {
-    Tetris tetris;
+    Canvas canvas(10, 10, ' ');
+    Tetris tetris(canvas);
     tetris.play();
 
     return 0;

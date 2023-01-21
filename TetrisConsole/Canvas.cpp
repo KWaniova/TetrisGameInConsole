@@ -3,23 +3,23 @@
 
 using namespace std;
 
-char EMPTY_CHAR = ' ';
 
-Canvas::Canvas(int _height, int _width) {
+Canvas::Canvas(int _height, int _width, char _empty_char) {
     canvas = new char *[_height];
     for (int row = 0; row < _height; row++)
         canvas[row] = new char[_width];
 
     for (int row = 0; row < _height; row++)
         for (int col = 0; col < _width; col++)
-            canvas[row][col] = EMPTY_CHAR;
+            canvas[row][col] = _empty_char;
 
     height = _height;
     width = _width;
+    empty_char = _empty_char;
 };
 
 bool Canvas::is_point_empty(Point point) {
-    return canvas[point.get_x()][point.get_y()] == EMPTY_CHAR;
+    return canvas[point.get_x()][point.get_y()] == empty_char;
 }
 
 char** Canvas::get_canvas() { //to get canvas that cant be modified
@@ -39,6 +39,7 @@ void Canvas::print_canvas_edge()
         std::cout << "= ";
     std::cout << std::endl;
 };
+
 
 Canvas::~Canvas() {
 }
@@ -71,3 +72,24 @@ int Canvas::get_width() {
     return width;
 }
 
+bool Canvas::is_row_full(int row) {
+    for(int col = 0; col < width; col++){
+        if(canvas[row][col] == empty_char){
+            return false;
+        }
+    }
+    return true;
+}
+
+bool Canvas::is_point_on_canvas(Point point){
+    return point.get_x() >= 0 && point.get_x() < height && point.get_y() >= 0 && point.get_y() < width;
+}
+
+
+void Canvas::set_canvas(char **_canvas) {
+    canvas = _canvas;
+}
+
+char Canvas::get_empty_char() {
+    return empty_char;
+}

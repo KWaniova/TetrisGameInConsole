@@ -6,12 +6,15 @@
 #define UNTITLED_TETRIS_H
 
 #include <iostream>
+#include "Canvas.h"
 
 class Tetris{
-
+    Canvas canvas = Canvas(0, 0, 0);
 public:
-    Tetris();
+    Tetris(Canvas _canvas);
     void play();
+
+    void clear_full_rows();
 };
 
 

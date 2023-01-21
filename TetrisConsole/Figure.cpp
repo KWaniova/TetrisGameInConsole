@@ -104,7 +104,7 @@ bool isPointValid(Point point, Canvas canvas){
     if((point.get_x() < 0) || (point.get_y() < 0)){
         return false;
     }
-    if( (point.get_x() >= canvas.get_height()) || (point.get_y() >= canvas.get_width()) ){
+    if( !canvas.is_point_on_canvas(point) ){
         return false;
     }
     return true;
@@ -151,8 +151,9 @@ bool Figure::check_move_possible(DIRECTION direction){
 bool Figure::check_fall_possible() {
     std::cout << "Checking fall possible" << std::endl;
 
-    if (check_move_possible(DOWN)) return true;
-    else if (check_move_possible(LEFT_DOWN)) return true;
+    if (!check_move_possible(DOWN)) return false;
+
+    if (check_move_possible(LEFT_DOWN)) return true;
     else if (check_move_possible(RIGHT_DOWN)) return true;
 
     return false;

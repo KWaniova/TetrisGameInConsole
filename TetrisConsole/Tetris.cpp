@@ -2,24 +2,21 @@
 // Created by Krystyna Waniova on 10.01.2023.
 //
 
+#include <stack>
 #include "include/Tetris.h"
 #include "include/Canvas.h"
 #include "include/Figure.h"
 #include "Figure_O.h"
 
-Tetris::Tetris(){};
-
-
+Tetris::Tetris(Canvas _canvas){
+    canvas = _canvas;
+};
 
 void Tetris::play() {
 
     // Providing a seed value
     srand((unsigned) time(NULL));
 
-    // Get a random number
-    int random = rand() % 3;
-
-    Canvas canvas(10, 10);
     std::cout << "Tetris game started" << std::endl;
     std::cout << "Preparing figure..." << std::endl;
     for(int i = 0; i < 10; i++){
@@ -29,7 +26,7 @@ void Tetris::play() {
         figure->draw(canvas);
         fall_possible = figure->check_fall_possible();
         std::cout << "Fall possible: " << fall_possible << std::endl;
-        DIRECTION direction = DOWN;
+        DIRECTION direction;
         while(fall_possible){
             int random = rand() % 3;
 
@@ -49,93 +46,41 @@ void Tetris::play() {
         }
         figure->draw_on_canvas();
         canvas.draw();
+        clear_full_rows();
+        canvas.draw();
+
     }
-
-
-    Figure *figure = new Figure_O(canvas);
-    bool fall_possible = true;
-    figure->print_coordinates();
-    figure->draw(canvas);
-    fall_possible = figure->check_fall_possible();
-    std::cout << "Fall possible: " << fall_possible << std::endl;
-    figure->fall(RIGHT_DOWN);
-    figure->print_coordinates();
-    figure->draw(canvas);
-    figure->print_coordinates();
-    fall_possible = figure->check_fall_possible();
-    std::cout << "Fall possible: " << fall_possible << std::endl;
-    figure->fall(RIGHT_DOWN);
-    figure->draw(canvas);
-    figure->print_coordinates();
-    fall_possible = figure->check_fall_possible();
-    std::cout << "Fall possible: " << fall_possible << std::endl;
-    figure->fall(RIGHT_DOWN);
-    figure->draw(canvas);
-    figure->print_coordinates();
-    fall_possible = figure->check_fall_possible();
-    std::cout << "Fall possible: " << fall_possible << std::endl;
-    figure->fall(RIGHT_DOWN);
-    figure->draw(canvas);
-    fall_possible = figure->check_fall_possible();
-    std::cout << "Fall possible: " << fall_possible << std::endl;
-    figure->fall(RIGHT_DOWN);
-    figure->draw(canvas);
-    fall_possible = figure->check_fall_possible();
-    std::cout << "Fall possible: " << fall_possible << std::endl;
-    figure->fall(RIGHT_DOWN);
-    figure->draw(canvas);
-    fall_possible = figure->check_fall_possible();
-    std::cout << "Fall possible: " << fall_possible << std::endl;
-    figure->fall(RIGHT_DOWN);
-    figure->draw(canvas);
-    fall_possible = figure->check_fall_possible();
-    std::cout << "Fall possible: " << fall_possible << std::endl;
-    figure->fall(RIGHT_DOWN);
-    figure->draw(canvas);
-    fall_possible = figure->check_fall_possible();
-    std::cout << "Fall possible: " << fall_possible << std::endl;
-    figure->fall(RIGHT_DOWN);
-    figure->draw(canvas);
 
 }
 
+void Tetris::clear_full_rows() {
+    std::cout<<"Clearing full rows"<<std::endl;
+    char** canvas_array = canvas.get_canvas();
 
+    int height = canvas.get_height();
+    int width = canvas.get_width();
 
+    char ** canvasCopy = new char *[height];
+    for (int row = 0; row < height; row++)
+        canvasCopy[row] = new char[width];
 
+    int height_idx = height -1;
+    int actualHeight = height_idx;
+    while(height_idx >= 0){
+         if(canvas.is_row_full(height_idx)){
+             height_idx--;
+         } else {
+             canvasCopy[actualHeight] = canvas_array[height_idx];
+             height_idx--;
+             actualHeight--;
+         }
+    }
 
-//    while (true) {
-//
-//        std::cout << "Drawing figure..." << std::endl;
-//        figure->draw(canvas);
-//        char x = ' ';
-//        std::cout << "Pres key: L, R or Q to quit game." << std::endl;
-//
-//        while( x != 'L' && x != 'R' && x != 'Q'){
-//            std::cin >> x;
-//            std::cout << "You pressed: " << x << std::endl;
-//            if( x != 'L' && x != 'R' && x != 'Q'){
-//                std::cout << "Wrong key pressed. Try again" << std::endl;
-//            }
-//        }
-//        if (x == 'L'){
-//            std::cout << "Moving figure left" << std::endl;
-//                figure->move_left(canvas);
-//        }
-//        else if (x == 'R'){
-//            std::cout << "Moving figure right" << std::endl;
-//                figure->move_right(canvas);
-//        }
-//        else if (x == 'Q'){
-//            std::cout << "Quitting game" << std::endl;
-//            break;
-//        }
-//        figure->print_coordinates();
-//        figure->move_down(canvas);
-//        figure->print_coordinates();
-//
-//        std::cout << std::endl;
-//        std::cout << "Drawing canvas..." << std::endl;
-//    }
-//    // TODO: add figure to canvas on place where it fell
-//    canvas.draw();
-
+    while(actualHeight >=0){
+        for(int i = 0; i < width; i++){
+            canvasCopy[actualHeight][i] = ' ';
+        }
+        actualHeight--;
+    }
+    canvas.set_canvas(canvasCopy);
+}
