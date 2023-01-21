@@ -23,7 +23,10 @@ public:
     COMMAND handle_user_command();
     bool check_if_game_over();
 
+
     void show_game_over();
+
+    Figure* draw_figure();
 };
 
 

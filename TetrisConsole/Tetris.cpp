@@ -6,7 +6,10 @@
 #include "include/Tetris.h"
 #include "include/Canvas.h"
 #include "include/Figure.h"
-#include "Figure_O.h"
+#include "include/Figure_O.h"
+#include "include/Figure_L.h"
+#include "include/Figure_T.h"
+#include "include/Figure_I.h"
 
 Tetris::Tetris(Canvas _canvas){
     canvas = _canvas;
@@ -22,7 +25,7 @@ void Tetris::play() {
     std::cout << "Preparing figure..." << std::endl;
 
     COMMAND command;
-    for(int i = 0; i < 10; i++){
+    while(true){
         command = game_step();
         if(command == COMMAND_QUIT || command == GAME_OVER){
             break;
@@ -31,41 +34,9 @@ void Tetris::play() {
 
     std::cout << "Tetris game ended" << std::endl;
     std::cout << "Game over" << std::endl;
-
     std::cout << "SCORE " << Figure::figure_count << std::endl;
-
 }
 
-void Tetris::clear_full_rows() {
-    std::cout<<"Clearing full rows"<<std::endl;
-    char** canvas_array = canvas.get_canvas();
-
-    int height = canvas.get_height();
-    int width = canvas.get_width();
-
-    char ** canvasCopy = new char *[height];
-    for (int row = 0; row < height; row++)
-        canvasCopy[row] = new char[width];
-
-    int height_idx = height -1;
-    int actualHeight = height_idx;
-    while(height_idx >= 0){
-         if(canvas.is_row_full(height_idx)){
-             height_idx--;
-         } else {
-             canvasCopy[actualHeight] = canvas_array[height_idx];
-             height_idx--;
-             actualHeight--;
-         }
-    }
-    while(actualHeight >=0){
-        for(int i = 0; i < width; i++){
-            canvasCopy[actualHeight][i] = ' ';
-        }
-        actualHeight--;
-    }
-    canvas.set_canvas(canvasCopy);
-}
 
 bool Tetris::check_if_game_over() {
     std::cout<<"Checking if game over"<<std::endl;
@@ -94,9 +65,8 @@ DIRECTION map_command_to_direction(COMMAND command){
 
 
 COMMAND Tetris::game_step() {
-    Figure *figure = new Figure_O(canvas);
+    Figure *figure = draw_figure();
     bool fall_possible;
-    figure->print_coordinates();
     figure->draw(canvas);
     fall_possible = figure->check_fall_possible();
     std::cout << "Fall possible: " << fall_possible << std::endl;
@@ -115,6 +85,7 @@ COMMAND Tetris::game_step() {
     figure->draw_on_canvas();
     clear_full_rows();
     canvas.draw();
+    delete figure;
     if(check_if_game_over()){
         return GAME_OVER;
     };
@@ -143,9 +114,52 @@ COMMAND Tetris::handle_user_command(){
     return COMMAND_QUIT;
 }
 
+void Tetris::clear_full_rows() {
+    std::cout<<"Clearing full rows"<<std::endl;
+    char** canvas_array = canvas.get_canvas();
+
+    int height = canvas.get_height();
+    int width = canvas.get_width();
+
+    char ** canvasCopy = new char *[height];
+    for (int row = 0; row < height; row++)
+        canvasCopy[row] = new char[width];
+
+    int height_idx = height -1;
+    int actualHeight = height_idx;
+    while(height_idx >= 0){
+        if(canvas.is_row_full(height_idx)){
+            height_idx--;
+        } else {
+            canvasCopy[actualHeight] = canvas_array[height_idx];
+            height_idx--;
+            actualHeight--;
+        }
+    }
+    while(actualHeight >=0){
+        for(int i = 0; i < width; i++){
+            canvasCopy[actualHeight][i] = ' ';
+        }
+        actualHeight--;
+    }
+    canvas.set_canvas(canvasCopy);
+}
 
 
+Figure* Tetris::draw_figure() {
+    std::cout<<"Drawing figure"<<std::endl;
 
+    int random = rand() % 4;
+    if(random == 0) {
+        return new Figure_O(canvas);
+    } else if(random == 1){
+        return new Figure_I(canvas);
+    } else if(random == 2){
+        return new Figure_L(canvas);
+    } else if(random == 3){
+        return new Figure_T(canvas);
+    }
+}
 
 /*
  *
@@ -191,3 +205,5 @@ void Tetris::play() {
 
 }
  */
+
+

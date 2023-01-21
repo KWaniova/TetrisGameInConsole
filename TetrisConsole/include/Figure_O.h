@@ -5,7 +5,7 @@
 #ifndef UNTITLED_FIGURE_O_H
 #define UNTITLED_FIGURE_O_H
 
-#include "include/Figure.h"
+#include "Figure.h"
 
 class Figure_O: public Figure {
 public:

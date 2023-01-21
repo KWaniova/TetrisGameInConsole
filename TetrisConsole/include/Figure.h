@@ -2,18 +2,17 @@
 // Created by Krystyna Waniova on 10.01.2023.
 //
 
-#ifndef TETRIMINO_H
-#define TETRIMINO_H
+#ifndef FIGURE_H
+#define FIGURE_H
 
 
 #include <vector>
-#include "../FigureCoordinates.h"
 #include "Canvas.h"
+
 
 enum DIRECTION {LEFT_DOWN, RIGHT_DOWN, DOWN};
 
-//TODO: here can be RFC
-class Figure {
+class Figure{
     int ID;
     std::vector<Point> block_coordinates;
     Canvas canvas;
@@ -25,6 +24,8 @@ class Figure {
 
 public:
     static int figure_count;
+
+    void create();
     Figure(Canvas _canvas, char _color, std::vector<Point> _coordinates);
     ~Figure();
     void draw(Canvas canvas);
@@ -43,6 +44,3 @@ public:
 
 
 #endif
-
-
-//narazie 3 kształty 0 -

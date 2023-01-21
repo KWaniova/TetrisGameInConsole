@@ -57,8 +57,11 @@
 				4,
 				6,
 				8,
+				9,
+				10,
 				11,
-				13
+				14,
+				16
 			]
 		}
 	],
@@ -96,8 +99,11 @@
 				4,
 				6,
 				8,
+				9,
+				10,
 				11,
-				13
+				14,
+				16
 			]
 		},
 		{
@@ -108,9 +114,12 @@
 				3,
 				5,
 				7,
-				9,
-				10,
-				12
+				12,
+				13,
+				15,
+				17,
+				18,
+				19
 			]
 		}
 	],
@@ -168,7 +177,25 @@
 		},
 		{
 			"backtrace" : 1,
-			"path" : "Figure_O.h",
+			"compileGroupIndex" : 0,
+			"path" : "Figure_I.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "Figure_T.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "Figure_L.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "include/Figure_O.h",
 			"sourceGroupIndex" : 1
 		},
 		{
@@ -192,6 +219,21 @@
 			"compileGroupIndex" : 0,
 			"path" : "FigureCoordinates.cpp",
 			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "include/Figure_L.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "include/Figure_I.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "include/Figure_T.h",
+			"sourceGroupIndex" : 1
 		}
 	],
 	"type" : "EXECUTABLE"

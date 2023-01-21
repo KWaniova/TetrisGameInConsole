@@ -1,5 +1,5 @@
 
-#include "Figure_O.h"
+#include "include/Figure_O.h"
 #include "include/Figure.h"
 #include "include/Canvas.h"
 #include <iostream>

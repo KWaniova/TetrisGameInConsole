@@ -90,6 +90,3 @@ void Canvas::set_canvas(char **_canvas) {
     canvas = _canvas;
 }
 
-char Canvas::get_empty_char() {
-    return empty_char;
-}
