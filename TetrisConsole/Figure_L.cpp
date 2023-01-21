@@ -4,12 +4,11 @@
 #include "include/Canvas.h"
 #include <iostream>
 
-Figure_L::Figure_L(Canvas canvas) : Figure(canvas, 'L', std::vector<Point>{}) {
+Figure_L::Figure_L(Point position) : Figure( 'L', std::vector<Point>{}) {
     std::cout << "Figure_L created" << std::endl;
-    int canvas_center_width = (canvas.get_width()-1) / 2;
-    Point point1(0, canvas_center_width);
-    Point point2(1, canvas_center_width);
-    Point point3(1, canvas_center_width+1);
+    Point point1(position.get_x(), position.get_y());
+    Point point2(position.get_x() + 1, position.get_y());
+    Point point3(position.get_x() + 1, position.get_y()+1);
     set_block_coordinates(std::vector<Point>{point1, point2, point3});
 }
 

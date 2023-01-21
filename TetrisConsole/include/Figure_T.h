@@ -10,7 +10,7 @@
 class Figure_T: public Figure {
 public:
 
-    Figure_T(Canvas canvas);
+    Figure_T(Point position);
     ~Figure_T();
 
 };

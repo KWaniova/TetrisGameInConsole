@@ -5,9 +5,9 @@ using namespace std;
 
 
 Canvas::Canvas(int _height, int _width, char _empty_char) {
-    canvas = new char *[_height];
+    canvas.resize(_height);
     for (int row = 0; row < _height; row++)
-        canvas[row] = new char[_width];
+        canvas[row].resize(_width);
 
     for (int row = 0; row < _height; row++)
         for (int col = 0; col < _width; col++)
@@ -18,19 +18,26 @@ Canvas::Canvas(int _height, int _width, char _empty_char) {
     empty_char = _empty_char;
 };
 
+Canvas::~Canvas() {
+    canvas.clear();
+}
+
+char Canvas::get_empty_char() {
+    return empty_char;
+}
+
 bool Canvas::is_point_empty(Point point) {
     return canvas[point.get_x()][point.get_y()] == empty_char;
 }
 
-char** Canvas::get_canvas() { //to get canvas that cant be modified
-    char ** canvasCopy = new char *[height];
-    for (int row = 0; row < height; row++)
-        canvasCopy[row] = new char[width];
-
-    for (int row = 0; row < height; row++)
+std::vector<std::vector<char>> Canvas::get_canvas() const {
+    std::vector<std::vector<char>> canvas_copy(height);
+    for (int row = 0; row < height; row++) {
+        canvas_copy[row].resize(width);
         for (int col = 0; col < width; col++)
-            canvasCopy[row][col] = canvas[row][col];
-    return canvasCopy;
+            canvas_copy[row][col] = canvas[row][col];
+    }
+    return canvas_copy;
 }
 
 void Canvas::print_canvas_edge()
@@ -41,10 +48,7 @@ void Canvas::print_canvas_edge()
 };
 
 
-Canvas::~Canvas() {
-}
-
-void Canvas::draw()
+void Canvas::print()
 {
     print_canvas_edge();
     for (int row = 0; row < height; row++)
@@ -86,7 +90,7 @@ bool Canvas::is_point_on_canvas(Point point){
 }
 
 
-void Canvas::set_canvas(char **_canvas) {
+void Canvas::set_canvas(std::vector<std::vector<char>> _canvas) {
     canvas = _canvas;
 }
 

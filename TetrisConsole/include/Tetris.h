@@ -17,16 +17,19 @@ public:
     Tetris(Canvas _canvas);
     void play();
 
-    void clear_full_rows();
-
     COMMAND game_step();
     COMMAND handle_user_command();
     bool check_if_game_over();
+    void clear_full_rows();
 
-
+    void figure_fall(Figure* figure,  DIRECTION direction);
     void show_game_over();
 
-    Figure* draw_figure();
+    void draw_figure_on_canvas(Figure* figure);
+    bool check_figure_move_possible(Figure* figure, DIRECTION direction1);
+    bool check_figure_fall_possible(Figure* figure);
+
+    Figure* pick_random_figure();
 };
 
 

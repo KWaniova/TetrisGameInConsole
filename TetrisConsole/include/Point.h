@@ -7,8 +7,7 @@
 
 
 class Point {
-    int x;
-    int y;
+    int x, y;
 public:
     Point();
     Point(int _x, int _y);
