@@ -151,16 +151,12 @@ bool Figure::check_move_possible(DIRECTION direction){
 bool Figure::check_fall_possible() {
     std::cout << "Checking fall possible" << std::endl;
 
-    if (!check_move_possible(DOWN)) return false;
-
-    if (check_move_possible(LEFT_DOWN)) return true;
-    else if (check_move_possible(RIGHT_DOWN)) return true;
-
-    return false;
+    if (check_move_possible(DOWN)) return true;
+    else return false;
 }
 
 
 void Figure::draw_on_canvas() {
-    std::cout << "Drawing Figure on canvas" << std::endl;
+//    std::cout << "Drawing Figure on canvas" << std::endl;
     canvas.draw_points(this->block_coordinates, this->color);
 }
