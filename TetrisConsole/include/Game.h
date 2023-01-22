@@ -5,7 +5,7 @@
 #ifndef UNTITLED_GAME_H
 #define UNTITLED_GAME_H
 
-
+template <typename GamePolicy>
 class Game {
 public:
     Game();

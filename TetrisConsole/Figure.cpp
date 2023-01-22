@@ -7,19 +7,17 @@
 
 int Figure::figure_count = 0;
 
-Figure::Figure(char _color, std::vector<Point> _coordinates) : color(_color), block_coordinates(_coordinates) {
+Figure::Figure(point_type _color, figure_type _coordinates) : color(_color), block_coordinates(_coordinates) {
     ID = figure_count;
     figure_count++;
-    color = _color;
-    block_coordinates = _coordinates;
-    std::cout << "Figure created of id: "<< ID << std::endl;
+    std::cout << "Figure created - id: "<< ID << std::endl;
 }
 
 Figure::~Figure() {
     std::cout << "Figure destroyed" << std::endl;
 }
 
-std::vector<Point> Figure::get_block_coordinates() {
+Figure::figure_type Figure::get_block_coordinates() {
     return block_coordinates;
 }
 
@@ -76,7 +74,7 @@ void Figure::print_coordinates() {
     }
 }
 
-void Figure::set_block_coordinates(std::vector<Point> _coordinates) {
+void Figure::set_block_coordinates(figure_type _coordinates) {
     std::cout << "Setting Figure coordinates" << std::endl;
     block_coordinates = _coordinates;
 }

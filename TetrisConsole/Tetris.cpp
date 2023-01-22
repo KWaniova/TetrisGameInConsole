@@ -126,9 +126,7 @@ void Tetris::clear_full_rows() {
     int height = canvas.get_height();
     int width = canvas.get_width();
 
-    std::vector<std::vector<char>> canvasCopy(height);
-    for (int row = 0; row < height; row++)
-        canvasCopy[row].resize(width);
+    auto new_canvas = canvas.get_empty_canvas();
 
     int height_idx = height - 1;
     int actualHeight = height_idx;
@@ -136,18 +134,18 @@ void Tetris::clear_full_rows() {
         if (canvas.is_row_full(height_idx)) {
             height_idx--;
         } else {
-            canvasCopy[actualHeight] = canvas_array[height_idx];
+            new_canvas[actualHeight] = canvas_array[height_idx];
             height_idx--;
             actualHeight--;
         }
     }
     while (actualHeight >= 0) {
         for (int i = 0; i < width; i++) {
-            canvasCopy[actualHeight][i] = canvas.get_empty_char();
+            new_canvas[actualHeight][i] = canvas.get_empty_char();
         }
         actualHeight--;
     }
-    canvas.set_canvas(canvasCopy);
+    canvas.set_canvas(new_canvas);
 }
 
 Figure* Tetris::pick_random_figure() {

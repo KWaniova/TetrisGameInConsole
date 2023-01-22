@@ -13,11 +13,12 @@
 enum DIRECTION {LEFT_DOWN, RIGHT_DOWN, DOWN};
 
 class Figure{
-    using color_type = char;
+    using point_type = Canvas::public_point_type;
+    point_type color;
+    using figure_type = std::vector<Point>;
 
     int ID;
-    std::vector<Point> block_coordinates;
-    color_type color;
+    figure_type block_coordinates;
 
 public:
     static int figure_count;
@@ -25,15 +26,13 @@ public:
     void move_left();
     void move_right();
     void move_down();
-    Figure(char _color, std::vector<Point> _coordinates);
+    Figure(point_type _color, figure_type _coordinates);
     ~Figure();
     void draw(Canvas canvas);
     void print_coordinates();
-    std::vector<Point> get_block_coordinates();
-    char get_color();
-
-    void set_block_coordinates(std::vector<Point> _coordinates);
-
+    figure_type get_block_coordinates();
+    point_type get_color();
+    void set_block_coordinates(figure_type _coordinates);
 };
 
 

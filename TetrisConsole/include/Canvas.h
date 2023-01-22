@@ -10,25 +10,33 @@
 #include "Point.h"
 
 class Canvas {
-    std::vector<std::vector<char>> canvas;
+    using figure_type = std::vector<Point>;
+    using point_type = char;
+
+    using canvas_type = std::vector<std::vector<point_type>>;
+
+    canvas_type canvas;
     int width;
     int height;
-    char empty_char;
+    point_type empty_char;
 public:
+
+    using public_point_type = point_type;
+
     void print_canvas_edge();
-    Canvas(int _height, int _width, char _empty_char);
+    Canvas(int _height, int _width, point_type _empty_char);
     ~Canvas();
     void print();
-    char get_empty_char();
-    void set_canvas(std::vector<std::vector<char>> _canvas);
-    void draw_points(std::vector<Point> points, char color);
+    point_type get_empty_char();
+    void set_canvas(canvas_type _canvas);
+    void draw_points(figure_type points, point_type color);
     bool is_point_empty(Point point);
     bool is_row_full(int row);
     bool is_point_on_canvas(Point point);
     int get_height();
     int get_width();
-
-    std::vector<std::vector<char>> get_canvas() const;
+    canvas_type get_empty_canvas();
+    canvas_type get_canvas() const;
 };
 
 #endif //UNTITLED_CANVAS_H
