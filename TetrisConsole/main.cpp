@@ -1,13 +1,11 @@
 #include <iostream>
-#include "include/Tetris.h"
+#include "include/GameSystem.h"
 
 using namespace std;
 
 int main()
 {
-    Canvas canvas(10, 10, ' ');
-    Tetris tetris(canvas);
-    tetris.play();
-
+    GameSystem gameSystem;
+    gameSystem.start();
     return 0;
 }

@@ -8,21 +8,23 @@
 
 #include <vector>
 #include "Point.h"
+#include "Config.h"
 
 class Canvas {
     using figure_type = std::vector<Point>;
-    using point_type = char;
+    using point_type = Config::empty_point_type;
 
     using canvas_type = std::vector<std::vector<point_type>>;
 
-    canvas_type canvas;
-    int width;
     int height;
+    int width;
+    canvas_type canvas;
     point_type empty_char;
 public:
 
     using public_point_type = point_type;
 
+    Canvas();
     void print_canvas_edge();
     Canvas(int _height, int _width, point_type _empty_char);
     ~Canvas();

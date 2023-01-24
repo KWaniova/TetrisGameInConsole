@@ -5,14 +5,15 @@
 #ifndef UNTITLED_GAME_H
 #define UNTITLED_GAME_H
 
-template <typename GamePolicy>
+#include "Canvas.h"
+
 class Game {
+protected:
+    Canvas canvas;
 public:
-    Game();
+    Game(Canvas _canvas);
     ~Game();
-    void start();
-    void stop();
-    void pause();
+    virtual void play();
 };
 
 

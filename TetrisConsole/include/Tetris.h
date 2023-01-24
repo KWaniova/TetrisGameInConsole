@@ -8,11 +8,11 @@
 #include <iostream>
 #include "Canvas.h"
 #include "Figure.h"
+#include "Game.h"
 
 enum COMMAND {COMMAND_LEFT, COMMAND_RIGHT, COMMAND_DOWN, COMMAND_QUIT, GAME_OVER};
 
-class Tetris{
-    Canvas canvas = Canvas(0, 0, 0);
+class Tetris: public Game {
 public:
     Tetris(Canvas _canvas);
     void play();

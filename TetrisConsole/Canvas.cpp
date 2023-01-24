@@ -1,4 +1,5 @@
 #include "include/Canvas.h"
+#include "include/Config.h"
 #include <iostream>
 
 using namespace std;
@@ -8,6 +9,13 @@ Canvas::Canvas(int _height, int _width, point_type _empty_char) {
     height = _height;
     width = _width;
     empty_char = _empty_char;
+    canvas = get_empty_canvas();
+};
+
+Canvas::Canvas() {
+    height = Config::get_instance().get_default_canvas_height();
+    width = Config::get_instance().get_default_canvas_width();
+    empty_char = Config::get_instance().get_default_empty_symbol();
     canvas = get_empty_canvas();
 };
 
@@ -24,6 +32,7 @@ Canvas::canvas_type Canvas::get_empty_canvas() {
     for (int row = 0; row < height; row++)
         for (int col = 0; col < width; col++)
             empty_canvas[row][col] = empty_char;
+
 
     return empty_canvas;
 }
@@ -53,25 +62,28 @@ void Canvas::print_canvas_edge()
     std::cout << std::endl;
 };
 
+void print_canvas(Canvas &canvas)
+{
+    canvas.print_canvas_edge();
+    for (auto row : canvas.get_canvas())
+    {
+        for (auto element : row)
+            std::cout << element << " ";
+        std::cout << std::endl;
+    }
+    canvas.print_canvas_edge();
+}
 
 void Canvas::print()
 {
-    print_canvas_edge();
-    for (int row = 0; row < height; row++)
-    {
-        for (int col = 0; col < width; col++)
-            cout << canvas[row][col] << " ";
-        cout << endl;
-    };
-    print_canvas_edge();
+    print_canvas(*this);
 };
 
 void Canvas::draw_points(Canvas::figure_type points, point_type color) {
-    for(int i = 0; i < points.size(); i++){
-        if(is_point_empty(points[i])){
-            canvas[points[i].get_x()][points[i].get_y()] = color;
+    for (auto point : points)
+        if(is_point_empty(point)){
+            canvas[point.get_x()][point.get_y()] = color;
         }
-    }
 }
 
 int Canvas::get_height() {

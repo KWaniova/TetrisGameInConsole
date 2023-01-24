@@ -23,7 +23,6 @@ Figure::figure_type Figure::get_block_coordinates() {
 
 void Figure::draw(Canvas canvas) {
     std::cout << "Drawing Figure" << std::endl;
-
     auto canvas_array = canvas.get_canvas();
     for (int i = 0; i < block_coordinates.size(); i++) {
         Point point = block_coordinates[i];

@@ -106,6 +106,30 @@ build CMakeFiles/untitled.dir/FigureCoordinates.cpp.o: CXX_COMPILER__untitled_De
   OBJECT_DIR = CMakeFiles/untitled.dir
   OBJECT_FILE_DIR = CMakeFiles/untitled.dir
 
+build CMakeFiles/untitled.dir/Game.cpp.o: CXX_COMPILER__untitled_Debug /Users/krystynawaniova/Documents/UJ/AbstractProgrammingProject/TetrisConsole/Game.cpp || cmake_object_order_depends_target_untitled
+  DEP_FILE = CMakeFiles/untitled.dir/Game.cpp.o.d
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk -fcolor-diagnostics -std=gnu++17
+  OBJECT_DIR = CMakeFiles/untitled.dir
+  OBJECT_FILE_DIR = CMakeFiles/untitled.dir
+
+build CMakeFiles/untitled.dir/GameSystem.cpp.o: CXX_COMPILER__untitled_Debug /Users/krystynawaniova/Documents/UJ/AbstractProgrammingProject/TetrisConsole/GameSystem.cpp || cmake_object_order_depends_target_untitled
+  DEP_FILE = CMakeFiles/untitled.dir/GameSystem.cpp.o.d
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk -fcolor-diagnostics -std=gnu++17
+  OBJECT_DIR = CMakeFiles/untitled.dir
+  OBJECT_FILE_DIR = CMakeFiles/untitled.dir
+
+build CMakeFiles/untitled.dir/Battleships.cpp.o: CXX_COMPILER__untitled_Debug /Users/krystynawaniova/Documents/UJ/AbstractProgrammingProject/TetrisConsole/Battleships.cpp || cmake_object_order_depends_target_untitled
+  DEP_FILE = CMakeFiles/untitled.dir/Battleships.cpp.o.d
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk -fcolor-diagnostics -std=gnu++17
+  OBJECT_DIR = CMakeFiles/untitled.dir
+  OBJECT_FILE_DIR = CMakeFiles/untitled.dir
+
+build CMakeFiles/untitled.dir/Config.cpp.o: CXX_COMPILER__untitled_Debug /Users/krystynawaniova/Documents/UJ/AbstractProgrammingProject/TetrisConsole/Config.cpp || cmake_object_order_depends_target_untitled
+  DEP_FILE = CMakeFiles/untitled.dir/Config.cpp.o.d
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk -fcolor-diagnostics -std=gnu++17
+  OBJECT_DIR = CMakeFiles/untitled.dir
+  OBJECT_FILE_DIR = CMakeFiles/untitled.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target untitled
@@ -114,7 +138,7 @@ build CMakeFiles/untitled.dir/FigureCoordinates.cpp.o: CXX_COMPILER__untitled_De
 #############################################
 # Link the executable untitled
 
-build untitled: CXX_EXECUTABLE_LINKER__untitled_Debug CMakeFiles/untitled.dir/main.cpp.o CMakeFiles/untitled.dir/Tetris.cpp.o CMakeFiles/untitled.dir/Figure.cpp.o CMakeFiles/untitled.dir/Canvas.cpp.o CMakeFiles/untitled.dir/Figure_O.cpp.o CMakeFiles/untitled.dir/Figure_I.cpp.o CMakeFiles/untitled.dir/Figure_T.cpp.o CMakeFiles/untitled.dir/Figure_L.cpp.o CMakeFiles/untitled.dir/Point.cpp.o CMakeFiles/untitled.dir/FigureCoordinates.cpp.o
+build untitled: CXX_EXECUTABLE_LINKER__untitled_Debug CMakeFiles/untitled.dir/main.cpp.o CMakeFiles/untitled.dir/Tetris.cpp.o CMakeFiles/untitled.dir/Figure.cpp.o CMakeFiles/untitled.dir/Canvas.cpp.o CMakeFiles/untitled.dir/Figure_O.cpp.o CMakeFiles/untitled.dir/Figure_I.cpp.o CMakeFiles/untitled.dir/Figure_T.cpp.o CMakeFiles/untitled.dir/Figure_L.cpp.o CMakeFiles/untitled.dir/Point.cpp.o CMakeFiles/untitled.dir/FigureCoordinates.cpp.o CMakeFiles/untitled.dir/Game.cpp.o CMakeFiles/untitled.dir/GameSystem.cpp.o CMakeFiles/untitled.dir/Battleships.cpp.o CMakeFiles/untitled.dir/Config.cpp.o
   FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk
   OBJECT_DIR = CMakeFiles/untitled.dir
   POST_BUILD = :
