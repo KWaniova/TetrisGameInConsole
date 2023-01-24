@@ -2,7 +2,7 @@
 // Created by Krystyna Waniova on 10.01.2023.
 //
 
-#include "include/Point.h"
+#include "include/Components/Point.h"
 #include <iostream>
 
 Point::Point() {

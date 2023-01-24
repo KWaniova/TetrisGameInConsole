@@ -2,7 +2,8 @@
 // Created by Krystyna Waniova on 10.01.2023.
 //
 
-#include "include/Config.h"
+//NOTE: Singleton
+#include "../include/Config.h"
 Config::Config(){};
 
 int Config::get_default_canvas_height() {

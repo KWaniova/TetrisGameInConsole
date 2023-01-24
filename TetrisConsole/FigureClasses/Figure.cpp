@@ -2,7 +2,7 @@
 // Created by Krystyna Waniova on 10.01.2023.
 //
 
-#include "include/Figure.h"
+#include "../include/Figures/Figure.h"
 #include <iostream>
 
 int Figure::figure_count = 0;

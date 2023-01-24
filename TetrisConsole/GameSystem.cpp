@@ -4,8 +4,13 @@
 
 #include "include/GameSystem.h"
 #include "include/Game.h"
-#include "include/Tetris.h"
-#include "include/Battleships.h"
+#include "include/Games/Battleships.h"
+#include "include/Components/Canvas.h"
+#include "include/Games/Tetris.h"
+#include "include/TetrisLevel/TetrisLevelEasy.h"
+#include "include/TetrisLevel/TetrisLevelMedium.h"
+#include "include/TetrisLevel/TetrisLevelHard.h"
+
 #include <iostream>
 
 GameSystem::GameSystem() {}
@@ -17,9 +22,40 @@ void GameSystem::start() {
 }
 
 
-void GameSystem::handle_user_input(USER_INPUT_ENUM input) {
-    Game* game;
+char get_game_level(){
+    std::cout << "Chose game level: E(easy), M(Medium), H(Hard)" << std::endl;
+    char input;
+    while(true){
+        std::cin >> input;
+        input = toupper(input);
 
+        if(input == 'E' || input =='M' || input =='H'){
+            break;
+        }
+    }
+    return input;
+}
+
+
+void play_tetris(){
+    char input = get_game_level();
+    Canvas c;
+    if(input == 'E'){
+        Tetris<TetrisLevelEasy> tetris(c);
+        tetris.play();
+    }
+    else if(input == 'M'){
+        Tetris<TetrisLevelMedium> tetris(c);
+        tetris.play();
+    }
+    else{
+        Tetris<TetrisLevelHard> tetris(c);
+        tetris.play();
+    }
+}
+
+void GameSystem::handle_user_input(USER_INPUT_ENUM input) {
+    std::unique_ptr<Game> game;
     switch (input) {
         case GLOBAL_SETTINGS:
             std::cout << "GLOBAL_SETTINGS" << std::endl;
@@ -33,12 +69,12 @@ void GameSystem::handle_user_input(USER_INPUT_ENUM input) {
             break;
         case START_TETRIS:
             std::cout << "Starting Tetris" << std::endl;
-            game = new Tetris(Canvas());
-            game->play();
+            play_tetris();
             break;
         case START_BATTLESHIPS:
             std::cout << "Starting Battleships" << std::endl;
-            game = new Battleships(Canvas());
+            //NOTE: traits
+            game = std::make_unique<Battleships>(Canvas());
             game->play();
             break;
     }

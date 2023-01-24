@@ -1,5 +1,5 @@
 
-#include "include/Point.h"
+#include "Point.h"
 
 class FigureCoordinates {
     Point point1;

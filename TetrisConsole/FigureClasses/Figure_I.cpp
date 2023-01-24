@@ -1,7 +1,7 @@
 
-#include "include/Figure_I.h"
-#include "include/Figure.h"
-#include "include/Canvas.h"
+#include "../include/Figures/Figure_I.h"
+#include "../include/Figures/Figure.h"
+#include "../include/Components/Canvas.h"
 #include <iostream>
 
 Figure_I::Figure_I(Point position) : Figure('i', std::vector<Point>{}) {

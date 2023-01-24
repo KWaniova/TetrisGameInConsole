@@ -53,19 +53,16 @@
 			"sourceIndexes" : 
 			[
 				0,
-				1,
-				6,
-				8,
+				5,
+				7,
+				9,
 				10,
 				11,
 				12,
-				13,
-				16,
-				18,
-				22,
-				23,
-				24,
-				25
+				15,
+				17,
+				21,
+				22
 			]
 		}
 	],
@@ -99,38 +96,39 @@
 			"sourceIndexes" : 
 			[
 				0,
-				1,
-				6,
-				8,
+				5,
+				7,
+				9,
 				10,
 				11,
 				12,
-				13,
-				16,
-				18,
-				22,
-				23,
-				24,
-				25
+				15,
+				17,
+				21,
+				22
 			]
 		},
 		{
 			"name" : "Header Files",
 			"sourceIndexes" : 
 			[
+				1,
 				2,
 				3,
 				4,
-				5,
-				7,
-				9,
+				6,
+				8,
+				13,
 				14,
-				15,
-				17,
+				16,
+				18,
 				19,
 				20,
-				21,
-				26
+				23,
+				24,
+				25,
+				26,
+				27
 			]
 		}
 	],
@@ -144,18 +142,12 @@
 		},
 		{
 			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "Tetris.cpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"path" : "include/Tetris.h",
+			"path" : "include/Games/Tetris.h",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 1,
-			"path" : "include/Battleships.h",
+			"path" : "include/Games/Battleships.h",
 			"sourceGroupIndex" : 1
 		},
 		{
@@ -171,12 +163,12 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "Figure.cpp",
+			"path" : "FigureClasses/Figure.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
-			"path" : "include/Figure.h",
+			"path" : "include/Figures/Figure.h",
 			"sourceGroupIndex" : 1
 		},
 		{
@@ -187,41 +179,41 @@
 		},
 		{
 			"backtrace" : 1,
-			"path" : "include/Canvas.h",
+			"path" : "include/Components/Canvas.h",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "Figure_O.cpp",
+			"path" : "FigureClasses/Figure_O.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "Figure_I.cpp",
+			"path" : "FigureClasses/Figure_I.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "Figure_T.cpp",
+			"path" : "FigureClasses/Figure_T.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "Figure_L.cpp",
+			"path" : "FigureClasses/Figure_L.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
-			"path" : "include/Figure_O.h",
+			"path" : "include/Figures/Figure_O.h",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 1,
-			"path" : "FigureCoordinates.h",
+			"path" : "include/Components/FigureCoordinates.h",
 			"sourceGroupIndex" : 1
 		},
 		{
@@ -232,7 +224,7 @@
 		},
 		{
 			"backtrace" : 1,
-			"path" : "include/Point.h",
+			"path" : "include/Components/Point.h",
 			"sourceGroupIndex" : 1
 		},
 		{
@@ -243,35 +235,23 @@
 		},
 		{
 			"backtrace" : 1,
-			"path" : "include/Figure_L.h",
+			"path" : "include/Figures/Figure_L.h",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 1,
-			"path" : "include/Figure_I.h",
+			"path" : "include/Figures/Figure_I.h",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 1,
-			"path" : "include/Figure_T.h",
+			"path" : "include/Figures/Figure_T.h",
 			"sourceGroupIndex" : 1
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "Game.cpp",
-			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "GameSystem.cpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "Battleships.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -283,6 +263,26 @@
 		{
 			"backtrace" : 1,
 			"path" : "include/Config.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "include/LevelPolicy.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "include/TetrisLevel/TetrisLevelMedium.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "include/TetrisLevel/TetrisLevelHard.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "include/TetrisLevel/TetrisLevelEasy.h",
 			"sourceGroupIndex" : 1
 		}
 	],

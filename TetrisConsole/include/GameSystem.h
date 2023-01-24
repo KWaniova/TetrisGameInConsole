@@ -2,7 +2,7 @@
 #ifndef UNTITLED_GAME_SYSTEM_H
 #define UNTITLED_GAME_SYSTEM_H
 
-#include "Canvas.h"
+#include "Components/Canvas.h"
 #include "Config.h"
 
 enum USER_INPUT_ENUM {

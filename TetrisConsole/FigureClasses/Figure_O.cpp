@@ -1,7 +1,7 @@
 
-#include "include/Figure_O.h"
-#include "include/Figure.h"
-#include "include/Canvas.h"
+#include "../include/Figures/Figure_O.h"
+#include "../include/Figures/Figure.h"
+#include "../include/Components/Canvas.h"
 #include <iostream>
 
 Figure_O::Figure_O(Point position) : Figure('O', std::vector<Point>{}) {

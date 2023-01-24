@@ -1,4 +1,4 @@
-#include "include/Canvas.h"
+#include "include/Components/Canvas.h"
 #include "include/Config.h"
 #include <iostream>
 

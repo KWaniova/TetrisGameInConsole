@@ -8,12 +8,13 @@
 
 #include <vector>
 #include "Point.h"
-#include "Config.h"
+#include "../Config.h"
 
 class Canvas {
     using figure_type = std::vector<Point>;
     using point_type = Config::empty_point_type;
 
+    //NOTE: STL
     using canvas_type = std::vector<std::vector<point_type>>;
 
     int height;

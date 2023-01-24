@@ -7,12 +7,13 @@
 
 
 #include <vector>
-#include "Canvas.h"
+#include "../Components/Canvas.h"
 
 
 enum DIRECTION {LEFT_DOWN, RIGHT_DOWN, DOWN};
 
 class Figure{
+    //NOTE:
     using point_type = Canvas::public_point_type;
     point_type color;
     using figure_type = std::vector<Point>;

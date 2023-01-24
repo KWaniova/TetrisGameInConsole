@@ -1,6 +1,4 @@
-#include <iostream>
 #include "include/GameSystem.h"
-
 using namespace std;
 
 int main()

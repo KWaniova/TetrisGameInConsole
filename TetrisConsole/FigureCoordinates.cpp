@@ -2,7 +2,7 @@
 // Created by Krystyna Waniova on 10.01.2023.
 //
 
-#include "FigureCoordinates.h"
+#include "include/Components/FigureCoordinates.h"
 #include <iostream>
 
 FigureCoordinates::FigureCoordinates() {
