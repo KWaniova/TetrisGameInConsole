@@ -1,4 +1,4 @@
-#Tetris Game
+# Tetris Game
 
 Project for the abstract programming course at Jagiellonian University 2022/2023
 
