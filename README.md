@@ -1,3 +1,7 @@
+#Tetris Game
+
+Project for the abstract programming course at Jagiellonian University 2022/2023
+
 Setup: https://ddanilov.me/dockerized-cpp-build
 
 docker run -it --rm --name=example \
@@ -9,5 +13,5 @@ docker run -it --rm --name=example \
 
 2. make
 
-3. wejsc do basha: make login
-   wejsc do build i odpalic game.out
+3. go to bash: make login
+   go to build and lounch game.out
